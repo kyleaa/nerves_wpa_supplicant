@@ -69,11 +69,11 @@ defmodule Nerves.WpaSupplicant do
   Tell the wpa_supplicant to connect to the specified network. Invoke
   like this:
 
-      iex> Nerves.WpaSupplicant.set_network(pid, ssid: "MyNetworkSsid", key_mgmt: :WPA_PSK, psk: "secret")
+      iex> Nerves.WpaSupplicant.set_network(pid, ssid: "MyNetworkSsid", key_mgmt: "WPA-PSK", psk: "secret")
 
   or like this:
 
-      iex> Nerves.WpaSupplicant.set_network(pid, %{ssid: "MyNetworkSsid", key_mgmt: :WPA_PSK, psk: "secret"})
+      iex> Nerves.WpaSupplicant.set_network(pid, %{ssid: "MyNetworkSsid", key_mgmt: "WPA-PSK", psk: "secret"})
 
   Many options are supported, but it is likely that `ssid` and `psk` are
   the most useful. The full list can be found in the wpa_supplicant
@@ -82,7 +82,7 @@ defmodule Nerves.WpaSupplicant do
       Option                | Description
       ----------------------|------------
       :ssid                 | Network name. This is mandatory.
-      :key_mgmt             | The security in use. This is mandatory. Set to :NONE, :WPA_PSK
+      :key_mgmt             | The security in use. This is mandatory. Set to NONE or WPA-PSK
       :proto                | Protocol use use. E.g., :WPA2
       :psk                  | WPA preshared key. 8-63 chars or the 64 char one as processed by `wpa_passphrase`
       :bssid                | Optional BSSID. If set, only associate with the AP with a matching BSSID

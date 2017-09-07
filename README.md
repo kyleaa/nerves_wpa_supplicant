@@ -103,7 +103,7 @@ To attach to an access point, you need to configure a network entry in the
 configured. The following removes all network entries so that only one is
 configured:
 
-    iex> Nerves.WpaSupplicant.set_network(pid, ssid: "MyNetworkSsid", key_mgmt: :WPA_PSK, psk: "secret")
+    iex> Nerves.WpaSupplicant.set_network(pid, ssid: "MyNetworkSsid", key_mgmt: "WPA-PSK", psk: "secret")
     :ok
 
 If the access point is around, the `wpa_supplicant` will eventually connect to
