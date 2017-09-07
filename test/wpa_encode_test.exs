@@ -42,7 +42,7 @@ defmodule WpaEncodeTest do
     assert Messages.encode(:ADD_NETWORK) == "ADD_NETWORK"
     assert Messages.encode({:SET_NETWORK, 1, :ssid, "SSID"}) == "SET_NETWORK 1 ssid \"SSID\""
     assert Messages.encode({:SET_NETWORK, 1, :psk, "SSID"}) == "SET_NETWORK 1 psk \"SSID\""
-    assert Messages.encode({:SET_NETWORK, 1, :key_mgmt, "SSID"}) == "SET_NETWORK 1 key_mgmt \"SSID\""
+    assert Messages.encode({:SET_NETWORK, 1, :key_mgmt, "SSID"}) == "SET_NETWORK 1 key_mgmt SSID"
     assert Messages.encode({:SET_NETWORK, 1, :identity, "SSID"}) == "SET_NETWORK 1 identity \"SSID\""
     assert Messages.encode({:SET_NETWORK, 1, :password, "SSID"}) == "SET_NETWORK 1 password \"SSID\""
     assert Messages.encode({:GET_NETWORK, 1, :ssid}) == "GET_NETWORK 1 ssid"
