@@ -17,8 +17,8 @@ defmodule Nerves.WpaSupplicant.Messages do
   def encode(cmd) when is_atom(cmd) do
     to_string(cmd)
   end
-  def encode({:SET_NETWORK, net_id, :key_mgmt, string}) when is_binary(string) do
-    "SET_NETWORK #{net_id} key_mgmt #{string}"
+  def encode({:SET_NETWORK, net_id, :key_mgmt, key_mgmt}) when is_binary(key_mgmt) do
+    encode({:SET_NETWORK, net_id, :key_mgmt, String.to_atom(key_mgmt)})
   end
   def encode({:"CTRL-RSP-IDENTITY", network_id, string}) do
     "CTRL-RSP-IDENTITY-#{network_id}-#{string}"

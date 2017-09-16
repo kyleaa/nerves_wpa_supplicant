@@ -82,7 +82,7 @@ defmodule Nerves.WpaSupplicant do
       Option                | Description
       ----------------------|------------
       :ssid                 | Network name. This is mandatory.
-      :key_mgmt             | The security in use. This is mandatory. Set to NONE or WPA-PSK
+      :key_mgmt             | The security in use. This is mandatory. Set to :NONE or "WPA-PSK"
       :proto                | Protocol use use. E.g., :WPA2
       :psk                  | WPA preshared key. 8-63 chars or the 64 char one as processed by `wpa_passphrase`
       :bssid                | Optional BSSID. If set, only associate with the AP with a matching BSSID
